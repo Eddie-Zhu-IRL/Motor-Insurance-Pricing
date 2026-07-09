@@ -17,15 +17,15 @@ The project follows a traditional General Insurance pricing framework by compari
 ## Business Problem
 Motor insurers must determine premiums that adequately reflect each policyholder's expected future claims while covering operating expenses and generating a target level of profit.
 
-This project demonstrates how Generalized Linear Models (GLMs) can be used to estimate expected claim costs and convert them into insurance premiums. Gross premiums are also considered by allowing variable expenses, and profit margin, etc.
+This project demonstrates how Generalized Linear Models (GLMs) can be used to estimate expected claim costs and convert them into insurance premiums. Gross premiums are estimated by incorporating expense loadings and target profit margins into the expected claim costs.
 
 ### Pricing Framework
-- Pure Premium
-
+- Pure Premium represents the expected cost of claims for an individual policyholder.
+- 
 $$
 Pure Premium = Frequency * Severity
 $$
-- Gross Premium
+- Gross Premium is the premium that insurance companies must recover operating expenses and earn an appropriate profit.
 
 $$
 Gross Premium = \frac{Pure Premim}{1 - Variable Expense Ratio - Profit Margin}
@@ -33,7 +33,7 @@ $$
 
 ## Dataset
 
-The Norauto dataset, available through the CASdatasets R package([CASDatasets](https://dutangc.github.io/CASdatasets/index.html)), comprises 183,999 observations of automobile insurance policies losses over a one-year period.
+The Norauto dataset, available through the CASdatasets R package([CASDatasets](https://dutangc.github.io/CASdatasets/index.html)), contains 183,999 observations of automobile insurance policies losses over a one-year period.
 
 | Variable | Description |
 |----------|-------------|
@@ -47,7 +47,8 @@ The Norauto dataset, available through the CASdatasets R package([CASDatasets](h
 
 ## Feature Engineering & Explanatory Data Analysis: Male, Young, DistLimit, GeoRegion
 ### 1. Feature Engineering: Relevel Factor Variables
-DistLimit and GeoRegion are factored with their levels listed below. However, given the information from data author, they will be re-leveled in the same mentioned above, which will make following plots more meaningful.
+DistLimit and GeoRegion are factored with their levels listed below. To improve interpretation and visualisation, both variables were converted into ordered categorical factors based on the descriptions provided by the dataset authors.
+This ordering allows trends in claim frequency and severity to be interpreted more intuitively.
 
 ![pre](/Figures/pre_relevel.png)
 
@@ -56,9 +57,13 @@ After relevelling, variable DistLimit are in order "8000 km", "12000 km", "16000
 ![post](/Figures/post_relevel.png)
 
 ### 2. Data Summary
-For the above four variables, grouping is performed on each to derive total number of policies in each category, frequency and severity in each category. 
-Before outputting summarries, a function is created with column names as input for reducing repetitive workload.
-Final outputs for the four variables are listed below.
+Exploratory analysis was performed to understand relationships between policyholder characteristics and insurance risk.
+Summary statistics and visualisations were produced for:
+- Male
+- Young
+- DistLimit
+- GeoRegion
+
 ![summary](Figure/eda_summary.png)
 
 ### 3. Visuals of Frequency
@@ -88,29 +93,29 @@ Dimension for train and test datasets are,
 
 ## Frequency Modelling
 
-### Poisson
+Claim frequency was modelled using two Generalized Linear Models:
 
+- Poisson Regression
+- Negative Binomial Regression
 
-### Negative Binomial
+Model performance was compared using:
 
-- Initial Theta for glm.nb in R
+- Akaike Information Criterion (AIC)
+- Dispersion Statistic
 
-
-### Model Selection: AIC and Dispersion
-AIC and Dispersion are calculated for either model, which shows that Poisson is a good fit to the train data, with lower AIC and Dispersion closer to 1. 
+The Poisson model produced the lower AIC while maintaining a dispersion statistic close to one, indicating that it provided the most appropriate fit for the training data.
 
 ![aic_dispersion](Figures/freq_perf.png)
 
 ## Severity Modelling
+Claim severity was modelled using
 
-### Gamma 
+- Gamma GLM
+- Lognormal GLM
 
+Predictive performance was evaluated on the test dataset using Mean Squared Error (MSE).
 
-### Log Normal
-
-
-### Model Selection: MSE
-MSE, or Mean Squared Errors, is used to measure performance between models. MSE shows that Gamma model has lower MSE, which is an indicator of good-fit to test data.
+The Gamma model achieved the lowest MSE and was therefore selected for premium estimation.
 
 ![mse](Figures/sev_perf.png)
 
