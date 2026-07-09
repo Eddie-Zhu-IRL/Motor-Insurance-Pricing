@@ -113,12 +113,36 @@ Claim severity was modelled using
 - Gamma GLM
 - Lognormal GLM
 
-Predictive performance was evaluated on the test dataset using Mean Squared Error (MSE).
-
-The Gamma model achieved the lowest MSE and was therefore selected for premium estimation.
+Predictive performance was evaluated on the test dataset using Mean Squared Error (MSE). The Gamma model achieved the lowest MSE and was therefore selected for premium estimation.
 
 ![mse](Figures/sev_perf.png)
 
 ## Pure Premium
 
+The selected models -Poisson for Frequency and Gamma for Severity- were combined to estimate policy-level pure premiums.
 
+Portfolio-level validation produced the following result.
+
+Metric	Value
+Observed Loss	€40,008,706
+Predicted Pure Premium	€41,432,760
+Predicted / Observed	1.036
+
+The predicted aggregate pure premium was approximately 3.6% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
+
+## Limitations
+
+This project is intended as a demonstration of actuarial pricing techniques.
+
+Several simplifications were adopted.
+- Fixed expense ratio and profit margin.
+- Limited rating variables available in the dataset.
+- No continuous variables
+
+Future work could explore more advanced pricing methods such as Tweedie GLMs, Generalized Additive Models (GAMs), or gradient boosting techniques.
+
+## Conclusion
+
+This project demonstrates a complete actuarial pricing workflow from raw policy data through exploratory analysis, frequency modelling, severity modelling and premium estimation.
+
+Independent implementations in Python and R produced consistent modelling results, illustrating both statistical methodology and practical actuarial pricing principles.
