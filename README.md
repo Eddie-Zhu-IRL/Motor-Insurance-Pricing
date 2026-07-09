@@ -14,6 +14,8 @@ The objective is to estimate the expected claim cost for each policyholder by mo
 
 The project follows a traditional General Insurance pricing framework by comparing multiple statistical models, selecting the most appropriate models using objective performance measures, and interpreting results from an actuarial perspective.
 
+The modelling workflow was independently implemented in both R and Python to validate consistency of actuarial calculations across programming environments.
+
 ## Business Problem
 Motor insurers must determine premiums that adequately reflect each policyholder's expected future claims while covering operating expenses and generating a target level of profit.
 
@@ -127,6 +129,18 @@ Portfolio-level validation produced the following result.
 
 The predicted aggregate pure premium was approximately 3.3% lowerer than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
 
+## Gross Premium
+
+The pure premium represents the expected claim cost only. In practice, insurers must also account for operating expenses, commissions, reinsurance costs, regulatory requirements, and target profit when determining the final premium charged to customers. Gross premium was estimated by applying a permissible loss ratio assumption of 70%, implying that expected claims represent 70% of the premium collected.
+
+Using the portfolio average pure premium, the illustrative gross premium was calculated as:
+
+$$
+Gross Premium = \frac{Pure Premim}{1 - Variable Expense Ratio - Profit Margin}
+$$
+
+![pred_obs_r](Figures/pred_obs_r.png)
+
 ## Cross-Platform Validation: R vs Python
 
 The complete pricing workflow was implemented independently in:
@@ -142,6 +156,8 @@ Both implementations used:
 - portfolio validation.
 
 Results were consistent between implementations.
+
+![pred_obs_python](Figures/pred_obs_python.png)
 
 Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences.
 
