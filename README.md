@@ -48,37 +48,43 @@ The Norauto dataset, available through the CASdatasets R package([CASDatasets](h
 ## Feature Engineering & Explanatory Data Analysis: Male, Young, DistLimit, GeoRegion
 ### 1. Feature Engineering: Relevel Factor Variables
 DistLimit and GeoRegion are factored with their levels listed below. However, given the information from data author, they will be re-leveled in the same mentioned above, which will make following plots more meaningful.
-![]()
+
+![pre](/Figures/pre_relevel.png)
 
 After relevelling, variable DistLimit are in order "8000 km", "12000 km", "16000 km", "20000 km", "25000-30000 km", "no limit". Varibale GeoRegion are in order of "High+", "High-", "Medium+", "Medium-", "Low+", "Low-", which is ordered from heaviest to lightest.
-![]()
+
+![post](/Figures/post_relevel.png)
 
 ### 2. Data Summary
 For the above four variables, grouping is performed on each to derive total number of policies in each category, frequency and severity in each category. 
 Before outputting summarries, a function is created with column names as input for reducing repetitive workload.
 Final outputs for the four variables are listed below.
-![]()
+![summary](Figure/eda_summary.png)
 
 ### 3. Visuals of Frequency
 Plots of frequency for each variable are as follows,
 
 **Male**
-![]()
+
+![male](Figures/freq_male.png)
 
 **Young**
-![]()
+
+![Young](Figures/freq_young.png)
 
 **DistLimit**
-![]()
+
+![DistLimit](Figures/freq_distlimit.png)
 
 **GeoRegion**
-![]()
+
+![GeoResion](Figures/freq_georegion.png)
 
 ## Train data & Test Data
 Before frequency and severity modelling, relevelled data is split into train and test datasets, with 80% for train data, and 20% for test data.
 Dimension for train and test datasets are,
 
-![]()
+![train_test](Figures/train_test.png)
 
 ## Frequency Modelling
 
@@ -92,7 +98,8 @@ Dimension for train and test datasets are,
 
 ### Model Selection: AIC and Dispersion
 AIC and Dispersion are calculated for either model, which shows that Poisson is a good fit to the train data, with lower AIC and Dispersion closer to 1. 
-![]()
+
+![aic_dispersion](Figures/freq_perf.png)
 
 ## Severity Modelling
 
@@ -104,7 +111,8 @@ AIC and Dispersion are calculated for either model, which shows that Poisson is 
 
 ### Model Selection: MSE
 MSE, or Mean Squared Errors, is used to measure performance between models. MSE shows that Gamma model has lower MSE, which is an indicator of good-fit to test data.
-![]()
+
+![mse](Figures/sev_perf.png)
 
 ## Pure Premium
 
