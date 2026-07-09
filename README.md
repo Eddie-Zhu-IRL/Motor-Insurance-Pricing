@@ -64,7 +64,7 @@ Summary statistics and visualisations were produced for:
 - DistLimit
 - GeoRegion
 
-![summary](Figure/eda_summary.png)
+![summary](Figures/eda_summary.png)
 
 ### 3. Visuals of Frequency
 Plots of frequency for each variable are as follows,
@@ -126,6 +126,26 @@ Portfolio-level validation produced the following result.
 ![ratio](Figures/pred_obs_ratio.png)
 
 The predicted aggregate pure premium was approximately 3.3% lowerer than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
+
+## Cross-Platform Validation: R vs Python
+
+The complete pricing workflow was implemented independently in:
+
+- R
+- Python
+
+Both implementations used:
+
+- Poisson frequency GLM,
+- Gamma severity GLM,
+- pure premium calculation,
+- portfolio validation.
+
+Results were consistent between implementations.
+
+Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences.
+
+This demonstrates reproducibility of the actuarial methodology across programming environments.
 
 ## Limitations
 
