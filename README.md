@@ -123,12 +123,9 @@ The selected models -Poisson for Frequency and Gamma for Severity- were combined
 
 Portfolio-level validation produced the following result.
 
-Metric	Value
-Observed Loss	€40,008,706
-Predicted Pure Premium	€41,432,760
-Predicted / Observed	1.036
+![ratio](Figures/pred_obs_ratio.png)
 
-The predicted aggregate pure premium was approximately 3.6% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
+The predicted aggregate pure premium was approximately 3.3% lowerer than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
 
 ## Limitations
 
