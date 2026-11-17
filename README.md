@@ -128,13 +128,15 @@ The predicted aggregate pure premium was approximately 2.8% higher than the obse
 
 ## Gross Premium
 
-The pure premium represents the expected claim cost only. In practice, insurers must also account for operating expenses, commissions, reinsurance costs, regulatory requirements, and target profit when determining the final premium charged to customers. Gross premium was estimated by applying a permissible loss ratio assumption of 70%, implying that expected claims represent 70% of the premium collected.
+The pure premium represents the expected claim cost only. In practice, insurers must also account for operating expenses, commissions, reinsurance costs, regulatory requirements, and target profit when determining the final premium charged to customers. Gross premium was estimated by applying a permissible loss ratio assumption of 70%, implying that expected claims represent 70% of the premium collected. 
 
 Using the portfolio average pure premium, the illustrative gross premium was calculated as:
 
 $$
 Gross Premium = \frac{Pure Premim}{1 - Variable Expense Ratio - Profit Margin}
 $$
+
+For the R model, a mean pure premium of €1,132 and a gross premium of €1,617 per test policy.
 
 ![pred_obs_r](Figures/pred_obs_r.png)
 
