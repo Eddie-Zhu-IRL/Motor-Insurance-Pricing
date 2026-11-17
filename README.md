@@ -14,7 +14,7 @@ The objective is to estimate the expected claim cost for each policyholder by mo
 
 The project follows a traditional General Insurance pricing framework by comparing multiple statistical models, selecting the most appropriate models using objective performance measures, and interpreting results from an actuarial perspective. Predicted Pure Premiums is matched against actual Claim Amount through visualizations.
 
-The modelling workflow was independently implemented in both R and Python to validate consistency of actuarial calculations across programming environments.
+The modelling workflow was independently implemented in both R and Python to validate consistency of actuarial calculations across programming environments. 
 
 ## Business Problem
 Motor insurers must determine premiums that adequately reflect each policyholder's expected future claims while covering operating expenses and generating a target level of profit.
