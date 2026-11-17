@@ -33,7 +33,7 @@ This project demonstrates how Generalized Linear Models (GLMs) can be used to es
 
 ### Pricing Framework
 - Pure Premium represents the expected cost of claims for an individual policyholder.
-- 
+ 
 $$
 Pure Premium = Frequency * Severity
 $$
