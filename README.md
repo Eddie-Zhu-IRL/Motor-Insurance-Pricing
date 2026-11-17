@@ -66,7 +66,6 @@ Summary statistics for Frequency and Severity, and visualizations were produced 
 - DistLimit
 - GeoRegion
 
-Plots of frequency for each variable are as follows,
 ![summary](Figures/freq_sev_vis.png)
 
 ## Train data & Test Data
