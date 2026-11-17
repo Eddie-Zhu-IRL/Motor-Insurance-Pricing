@@ -12,7 +12,7 @@ The objective is to estimate the expected claim cost for each policyholder by mo
 - Pure Premium
 - Gross Premium
 
-The project follows a traditional General Insurance pricing framework by comparing multiple statistical models, selecting the most appropriate models using objective performance measures, and interpreting results from an actuarial perspective.
+The project follows a traditional General Insurance pricing framework by comparing multiple statistical models, selecting the most appropriate models using objective performance measures, and interpreting results from an actuarial perspective. Predicted Pure Premiums is matched against actual Claim Amount through visualizations.
 
 The modelling workflow was independently implemented in both R and Python to validate consistency of actuarial calculations across programming environments.
 
