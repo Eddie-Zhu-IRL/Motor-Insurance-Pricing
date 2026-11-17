@@ -102,7 +102,7 @@ Claim severity was modelled using
 - Gamma GLM
 - Lognormal GLM
 
-Predictive performance was evaluated on the test dataset using Mean Squared Error (MSE). The Gamma model achieved the lowest MSE and was therefore selected for premium estimation.
+Predictive performance was evaluated using Mean Squared Error (MSE). The Gamma model achieved the lowest MSE and was therefore selected for premium estimation.
 
 ![mse](Figures/sev_perf.png)
 
