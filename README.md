@@ -128,6 +128,18 @@ $$
 
 ![pred_obs_r](Figures/pred_obs_r.png)
 
+## Predicted Loss vs Actual Claims Amount
+
+Predicted Loss is checked against actual claim amount using test data. For each policyholder, their characteristics and risk category are considered. 
+
+The overall predicted loss match actual claim amount. However, the model is over predicted the losses for the following factors:
+
+- Gender: Female
+- DistLimit: the distance limit stated in the insurance contract - 1200km and 2000km
+- GeoRegion: density of geographical region - "High-" and "Low-"
+
+![pred_act](Figures/pred_act_r.png)
+
 ## Cross-Platform Validation: R vs Python
 
 The complete pricing workflow was implemented independently in:
