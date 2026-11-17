@@ -66,7 +66,13 @@ Summary statistics for Frequency and Severity, and visualizations were produced 
 - DistLimit
 - GeoRegion
 
-![summary](Figures/freq_sev_vis.png)
+![summary](Figures/freq_sev_Gender.png)
+
+![summary](Figures/freq_sev_Young_26YO.png)
+
+![summary](Figures/freq_sev_DistLimit.png)
+
+![summary](Figures/freq_sev_GeoRegion.png)
 
 ## Train data & Test Data
 Before frequency and severity modelling, relevelled data is split into train and test datasets, with 80% for train data, and 20% for test data.
