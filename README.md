@@ -58,34 +58,16 @@ After relevelling, variable DistLimit are in order "8000 km", "12000 km", "16000
 
 ![post](/Figures/post_relevel.png)
 
-### 2. Data Summary
+### 2. Data Summary & Visuals
 Exploratory analysis was performed to understand relationships between policyholder characteristics and insurance risk.
-Summary statistics and visualisations were produced for:
+Summary statistics for Frequency and Severity, and visualizations were produced for:
 - Male
 - Young
 - DistLimit
 - GeoRegion
 
-![summary](Figures/eda_summary.png)
-
-### 3. Visuals of Frequency
 Plots of frequency for each variable are as follows,
-
-**Male**
-
-![male](Figures/freq_male.png)
-
-**Young**
-
-![Young](Figures/freq_young.png)
-
-**DistLimit**
-
-![DistLimit](Figures/freq_distlimit.png)
-
-**GeoRegion**
-
-![GeoResion](Figures/freq_georegion.png)
+![summary](Figures/freq_sev_vis.png)
 
 ## Train data & Test Data
 Before frequency and severity modelling, relevelled data is split into train and test datasets, with 80% for train data, and 20% for test data.
