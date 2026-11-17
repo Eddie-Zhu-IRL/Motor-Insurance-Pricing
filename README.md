@@ -124,7 +124,7 @@ Portfolio-level validation produced the following result.
 
 ![ratio](Figures/pred_obs_ratio.png)
 
-The predicted aggregate pure premium was approximately 3.3% lowerer than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
+The predicted aggregate pure premium was approximately 2.8% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models by R. Model by R over-estimates loss while model by Python under-estimates loss by 0.4%. A gap of this size is consistent with the two languages using different random splits, since claim counts and large losses in a 20% test set vary from split to split.
 
 ## Gross Premium
 
