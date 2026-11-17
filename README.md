@@ -149,29 +149,15 @@ For the R model, a mean pure premium of €1,132 and a gross premium of €1,617
 
 Predicted Pure Premium vs Actual Loss by Gender, Young_26YO, DistLimit and GeoRegion is plotted using R and Python.  
 
-- Gender: Female
-- Young_26YO
-- DistLimit: the distance limit stated in the insurance contract - 1200km and 2000km
-- GeoRegion: density of geographical region - "High-" and "Low-"
+- Gender: R over-predicts pure premium for females, while Python under-predicts. The two gaps point in opposite directions on a group with only about 60 test claims, which is what sampling noise looks like.
+- Young_26YO: Both models fit well.
+- DistLimit: both models show the upward trend. The misses fall on different bands: R over-predicts 12,000 km and 20,000 km, and under-predicts 16,000 km and 25,000-30,000 km; Python under-predicts 8,000 km and 20,000 km, and over-predicts 16,000km and 25,000-30,000 km.
+- GeoRegion: both show the downward trend. R over-predicts High- and Low-, and under-predicts High+ and Medium+; Python over-predicts High- and Medium-, and under-predicts High+, Medium+ and Low-.
 
+**R outputs:**
 ![pred_act](Figures/pred_act_r.png)
 
-## Cross-Platform Validation: R vs Python
-
-The complete pricing workflow was implemented independently in:
-
-- R
-- Python
-
-Both implementations used:
-
-- Poisson frequency GLM,
-- Gamma severity GLM,
-- pure premium calculation,
-- portfolio validation.
-
-Results were consistent between implementations.
-
+**Python outputs:**
 ![pred_obs_python](Figures/pred_obs_python.png)
 
 Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences. The predicted aggregate pure premium was approximately 3.6% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
