@@ -138,6 +138,9 @@ $$
 
 For the R model, a mean pure premium of €1,132 and a gross premium of €1,617 per test policy.
 
+**Python Outputs:**
+![pred_obs_python](Figures/pred_obs_python.png)
+
 ![pred_obs_r](Figures/pred_obs_r.png)
 
 ## Results: Predicted Loss vs Actual Claims Amount
@@ -158,17 +161,9 @@ Predicted Pure Premium vs Actual Loss by Gender, Young_26YO, DistLimit and GeoRe
 ![pred_act](Figures/pred_act_r.png)
 
 **Python outputs:**
-![pred_obs_python](Figures/pred_obs_python.png)
-
-Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences. The predicted aggregate pure premium was approximately 3.6% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
-
-### Predicted Loss vs Actual Claim Amount
-
-The overall performance for model built in Python is relatively in line with model built in R. However, when it comes to model's predicted loss for policyholder's characteristics and risk segment, models constructed by R and Python show differences. This is resulted from the data splitting process for train data and test data. 
-
 ![pred_act](Figures/pred_act_python.png)
 
-This demonstrates reproducibility of the actuarial methodology across programming environments.
+Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences. 
 
 ## Limitations
 
