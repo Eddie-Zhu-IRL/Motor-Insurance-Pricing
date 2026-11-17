@@ -160,6 +160,9 @@ Results were consistent between implementations.
 
 Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences. The predicted aggregate pure premium was approximately 3.6% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
 
+### Predicted Loss vs Actual Claim Amount
+![pred_act](Figures/pred_act_python.png)
+
 This demonstrates reproducibility of the actuarial methodology across programming environments.
 
 ## Limitations
