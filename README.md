@@ -20,8 +20,8 @@ The modelling workflow was independently implemented in both R and Python to val
 
 |   | R | Python |
 |----------|-------------|-------------|
-| Frequency model | Poisson GLM | Poisson GLM |
-| Severity model | Gamma GLM | Gamma GLM |
+| Frequency model | Poisson GLM (AIC & Dispersion) | Poisson GLM |
+| Severity model | Gamma GLM (MSE) | Gamma GLM |
 | Test policies | 36,799 | 36,800 |
 | Predicted / observed loss (test set) | 1.028 (+2.8%) | 1.004 (+0.4%) |
 | Illustrative gross premium per policy record | €1,617 | €1,610 |
@@ -138,7 +138,12 @@ $$
 
 ![pred_obs_r](Figures/pred_obs_r.png)
 
-## Predicted Loss vs Actual Claims Amount
+## Results: Predicted Loss vs Actual Claims Amount
+### Portfolio Level
+| Tool | Policies | Predicted Loss |  Observed Loss | Pred/Obs |
+|----------|-------------|-------------|-------------|-------------|
+| R | 36,799 | 41.66m | 40.53m | 1.028 |
+| Python | 36,800 | 41.46m | 41.29m | 1.004 |
 
 Predicted Loss is checked against actual claim amount using test data. For each policyholder, their characteristics and risk category are considered. 
 
