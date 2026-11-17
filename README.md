@@ -146,7 +146,7 @@ Results were consistent between implementations.
 
 ![pred_obs_python](Figures/pred_obs_python.png)
 
-Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences.
+Differences in final premium estimates were caused by different random train/test partitions rather than modelling differences. The predicted aggregate pure premium was approximately 3.6% higher than the observed portfolio loss, indicating good agreement between the selected frequency and severity models.
 
 This demonstrates reproducibility of the actuarial methodology across programming environments.
 
