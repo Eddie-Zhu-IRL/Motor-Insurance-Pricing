@@ -16,6 +16,16 @@ The project follows a traditional General Insurance pricing framework by compari
 
 The modelling workflow was independently implemented in both R and Python to validate consistency of actuarial calculations across programming environments. 
 
+## Headline Results
+
+|   | R | Python |
+|----------|-------------|-------------|
+| Frequency model | Poisson GLM | Poisson GLM |
+| Severity model | Gamma GLM | Gamma GLM |
+| Test policies | 36,799 | 36,800 |
+| Predicted / observed loss (test set) | 1.028 (+2.8%) | 1.004 (+0.4%) |
+| Illustrative gross premium per policy record | €1,617 | €1,610 |
+
 ## Business Problem
 Motor insurers must determine premiums that adequately reflect each policyholder's expected future claims while covering operating expenses and generating a target level of profit.
 
