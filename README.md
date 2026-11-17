@@ -147,9 +147,9 @@ For the R model, a mean pure premium of €1,132 and a gross premium of €1,617
 | R | 36,799 | 41.66m | 40.53m | 1.028 |
 | Python | 36,800 | 41.46m | 41.29m | 1.004 |
 
-Predicted Loss is checked against actual claim amount using test data. For each policyholder, their characteristics and risk category are considered. 
+Predicted Pure Premium vs Actual Loss by Gender, Young_26YO, DistLimit and GeoRegion is plotting using R and Python.  is checked against actual claim amount using test data. For each policyholder, their characteristics and risk category are considered. 
 
-The overall predicted loss match actual claim amount. However, the model is over predicted the losses for the following factors:
+The overall predicted loss match actual claim amount. However, the model is over predicted the losses for the following :
 
 - Gender: Female
 - DistLimit: the distance limit stated in the insurance contract - 1200km and 2000km
