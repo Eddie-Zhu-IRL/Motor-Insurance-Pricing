@@ -139,9 +139,11 @@ $$
 For the R model, a mean pure premium of €1,132 and a gross premium of €1,617 per test policy.
 
 **R Outputs:**
+
 ![pred_obs_r](Figures/pred_obs_r.png)
 
 **Python Outputs:**
+
 ![pred_obs_python](Figures/pred_obs_python.png)
 
 ## Results: Predicted Loss vs Actual Claims Amount
